@@ -143,3 +143,8 @@ $pwd to find out where we are
 $node --inspect-brk debugging.js
 
 Go to chrome and enter chrome://inspect/#devices : now go to node developer tools.
+
+--GitHub adding new files
+$git add .
+$git commit -m "Add existing file"
+$git push origin master
