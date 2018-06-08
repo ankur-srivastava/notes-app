@@ -1,0 +1,145 @@
+What is the Problem?
+Who has the Problem?
+Why is this Problem important?
+
+
+In Youtube - we can have Courses and attach Reviews to it.
+
+Courses mean a series of lecture.
+
+A site to help you discover courses and also mention if it's completely free or not.
+
+
+
+This package will install:
+	•	Node.js v8.11.1 to /usr/local/bin/node
+	•	npm v5.6.0 to /usr/local/bin/npm
+
+Post Install
+
+$ node --version
+$ npm --version
+
+Install express-generator
+
+$ sudo npm install -g express-generator
+
+$ express --version
+
+
+Install MongoDB - Later
+
+Install Bootstrap - Later
+
+Install Heroku  Done : ankurlkw@gmail.com / Galaxy01!
+
+
+To create a new project:
+
+cd /Users/ankursrivastava/Desktop/Tools/Node/loc8r
+
+$ express --view=pug git
+
+install dependencies : $ npm install
+
+To run the application use:
+
+$ DEBUG=loc8r:* npm start
+
+Access at : http://localhost:3000/
+
+
+We can install $ npm install -g nodemon
+This detects changes and restart if needed.
+
+Instead of typing node to start the application, you type nodemon.
+
+GIT and GIT-HUB
+
+Follow
+
+https://stackoverflow.com/questions/2643502/git-permission-denied-publickey
+https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+
+If you get : fatal: remote origin already exists
+
+then use
+
+$ git remote set-url origin git@github.com:ppreyer/first_app.git
+
+
+$ git init
+$ git add --all
+$ git commit -m "First commit"
+
+These three things together will create a local Git repository containing the entire codebase for the application. When we go to update the application later on, and we want to push some changes live, we’ll use the second two commands, with a different message, to update the repository.
+Your local repository is now ready. It’s time to create the Heroku application.
+
+This next step will create an application on Heroku as a remote Git repository of your local repository. All this is done with a single terminal command:
+
+$ heroku create
+
+After running this I got
+
+Creating app... done, ⬢ morning-brook-12266
+https://morning-brook-12266.herokuapp.com/ | https://git.heroku.com/morning-brook-12266.git
+
+Next -> push the contents of your local repository into the heroku remote repository.
+
+$ git push heroku master
+
+Everything is now in place, and the application is live on the internet! You can see it by typing in the URL given to you in the confirmation, via your account on the Heroku website, or by using the following terminal command:
+
+$ heroku open
+
+A SIMPLE UPDATE PROCESS
+
+Every time you want to push some new changes through, you just need three terminal commands:
+
+$ git add --all
+$ git commit -m "Commit message here"
+$ git push heroku master
+
+
+Install MongoDB using homebrew : https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+
+Installed in /usr/local/Cellar/mongodb/3.6.4
+
+to start use
+
+$ sudo mongod
+
+Start a mongo shell on the same host machine as the mongod. Use the --host command line option to specify the localhost address and port that the mongod listens on:
+
+mongo --host 127.0.0.1:27017
+
+Later, to stop MongoDB, press Control+C in the terminal where the mongod instance is running.
+
+Install Mongoose
+
+$ npm install --save mongoose
+
+mongoose v5.1.1
+
+Open a new Shell and start mongodb. We have configured all DB settings in db.js where we perform shutdown as well when Node app ends.
+
+To compile a schema to model in Mongoose we can run
+
+$ mongoose.model('Location', locationSchema);
+
+To start MongoDB SHELL use
+
+$ mongo
+
+When you’re in the shell new lines start with a >
+
+
+Terminal Basics:
+
+$pwd to find out where we are
+
+--To Debug using Chrome
+
+$node --inspect-brk debugging.js
+
+Go to chrome and enter chrome://inspect/#devices : now go to node developer tools.
