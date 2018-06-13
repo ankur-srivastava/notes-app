@@ -148,3 +148,63 @@ Go to chrome and enter chrome://inspect/#devices : now go to node developer tool
 $git add .
 $git commit -m "Add existing file"
 $git push origin master
+
+--If we hit HTTP request query limit then use the fix here : https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4/questions/2956062
+key=AIzaSyBaalIyifyyHg4rIj2gDMIUBTWldBtweQo
+
+--Git
+	To download git headover to git-scm.com
+	I already have it.
+
+	git init //to initialize a git repository
+	git status // to check untracked files
+	git commit -m "V1"
+
+	Coming to github we first need an SSH key to connect securely. To check if an SSH key exists use:
+	ls -al ~/.ssh   //here al is to list all files. If we see a file like id_rsa then we already have a key.
+	To generate a key use:
+	ssh-keygen -t rsa -b 4096 -C 'ankurlkw@gmail.com'
+				b is for bytes. This creates id_rsa
+
+	We next want to run ssh agent and add this key.
+		eval "$(ssh-agent -s)"
+		ssh-add ~/.ssh/id_rsa //This adds identity
+
+	Copy the SSH key using pbcopy command and paste it in github.
+
+	To check github connection use:
+	ssh -T git@github.com
+
+	Heroku
+		Install tools from toolbelt.heroku.com
+		$heroku login
+
+		Add local SSH key to Heroku
+		$heroku keys:add
+		$heroku keys //prints keys. We can remove them if needed.
+		$ssh -v git@heroku.com // to test connection
+
+		To run the app in Heroku a couple of changes are needed.
+			1. We have hardcoded the port in server.xml. We need to use an environ var.
+				 Earlier we had
+				 app.listen(3000, ()=>{
+				   console.log('Server is up at port 3000');
+				 });
+				 Now
+				 const port = process.env.PORT || 3000;
+				 app.listen(port, ()=>{
+				   console.log('Server is up at port', port);
+				 });
+			2. We need to tell Heroku which file to use as the start file. This can be done in pakage.json
+				"scripts": {
+					"test": "echo \"Error: no test specified\" && exit 1",
+					"start":"node server.js"
+				}
+
+			We can start the app using:
+			$npm start
+
+Now once we push changes to github we can do
+$heroku create //to	push changes to heroku git and also create an app.
+$git push heroku master
+$heroku open
